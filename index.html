@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M.R. Shavkat</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0a;color:#f5f5f0;font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem 1rem}
+.card{width:100%;max-width:420px;background:#1a1a1a;border-radius:24px;overflow:hidden;border:1px solid rgba(201,168,76,.25);box-shadow:0 40px 80px rgba(0,0,0,.7);animation:rise .7s cubic-bezier(.22,.68,0,1.2) both}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.car-wrap{position:relative;width:100%;height:240px;overflow:hidden}
+.car-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s ease}
+.car-wrap:hover img{transform:scale(1.05)}
+.car-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,#1a1a1a 100%)}
+.badge{position:absolute;top:14px;right:14px;background:#c9a84c;color:#000;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1.5px;padding:4px 14px;border-radius:20px}
+.body{padding:1.5rem 1.5rem 2rem}
+.name{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;letter-spacing:2px;color:#f5f5f0;line-height:1;margin-bottom:4px}
+.subtitle{font-size:12px;color:#c9a84c;letter-spacing:3px;text-transform:uppercase;margin-bottom:1.5rem}
+.divider{height:1px;background:rgba(201,168,76,.2);margin-bottom:1.5rem}
+.phone-btn{display:flex;align-items:center;gap:12px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.3);border-radius:14px;padding:14px 18px;text-decoration:none;color:#f5f5f0;font-size:1.1rem;font-weight:500;letter-spacing:1px;transition:background .2s,border-color .2s,transform .15s;margin-bottom:1.5rem}
+.phone-btn:hover{background:rgba(201,168,76,.18);border-color:#c9a84c;transform:translateY(-2px)}
+.phone-icon{width:40px;height:40px;background:#c9a84c;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.phone-icon svg{width:18px;height:18px;fill:#000}
+.qr-label{font-size:11px;color:rgba(245,245,240,.35);letter-spacing:2px;text-transform:uppercase;text-align:center;margin-bottom:12px}
+.qr-wrap{display:flex;justify-content:center}
+#qrcode canvas,#qrcode img{border-radius:10px;border:3px solid rgba(201,168,76,.3)}
+.plate{text-align:center;margin-top:1.2rem;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:4px;color:rgba(245,245,240,.2)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="car-wrap">
+    <img src="onix.jpg" alt="Chevrolet Onix">
+    <div class="car-overlay"></div>
+    <span class="badge">CHEVROLET ONIX</span>
+  </div>
+  <div class="body">
+    <div class="name">M.R. Shavkat</div>
+    <div class="subtitle">Avtomobil egasi</div>
+    <div class="divider"></div>
+    <a href="tel:+998900456464" class="phone-btn">
+      <div class="phone-icon">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      </div>
+      +998 90 045 64 64
+    </a>
+    <div class="qr-label">QR — kontaktni saqlash</div>
+    <div class="qr-wrap"><div id="qrcode"></div></div>
+    <div class="plate">10 O 100 NX · UZB</div>
+  </div>
+</div>
+<script>
+new QRCode(document.getElementById("qrcode"),{
+  text:"BEGIN:VCARD\r\nVERSION:3.0\r\nFN:M.R. Shavkat\r\nN:Shavkat;M.R.;;;\r\nTEL;TYPE=CELL,VOICE:+998900456464\r\nEND:VCARD",
+  width:160,height:160,
+  colorDark:"#c9a84c",colorLight:"#1a1a1a",
+  correctLevel:QRCode.CorrectLevel.M
+});
+</script>
+</body>
+</html>
